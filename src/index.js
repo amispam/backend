@@ -7,6 +7,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 connectDB().then(()=>{
+    app.get("/", (req, res)=>{
+        res.send("<h1>Your server is live and running !</h1>")
+    })
     app.listen(port, ()=>{
         console.log(`listening at port ${port}`);
     })
